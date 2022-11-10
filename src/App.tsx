@@ -1,9 +1,13 @@
-import { ChakraProvider, Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+
+import routes from "./routes";
 
 import "./App.css";
+import { useRoutes } from "react-router-dom";
 
 function App() {
-  return <ChakraProvider>app</ChakraProvider>;
+  const content = useRoutes(routes);
+  return content;
 }
 
 export default App;
