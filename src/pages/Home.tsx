@@ -1,9 +1,11 @@
 import { SearchBox } from "../components";
 
 const Home: React.FC = () => (
-  <>
-    <SearchBox />
-  </>
+  <div className="w-full h-full">
+    <div className="container">
+      <SearchBox />
+    </div>
+  </div>
 );
 
 export default Home;
