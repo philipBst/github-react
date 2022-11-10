@@ -1,7 +1,9 @@
+import { ChakraProvider, Button } from "@chakra-ui/react";
+
 import "./App.css";
 
 function App() {
-  return <div>index</div>;
+  return <ChakraProvider>app</ChakraProvider>;
 }
 
 export default App;
