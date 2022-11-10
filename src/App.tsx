@@ -1,7 +1,12 @@
+import { useRoutes } from "react-router-dom";
+
+import routes from "./routes";
+
 import "./App.css";
 
 function App() {
-  return <div>index</div>;
+  const content = useRoutes(routes);
+  return content;
 }
 
 export default App;
