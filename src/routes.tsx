@@ -1,6 +1,6 @@
 import { Navigate, RouteObject } from "react-router-dom";
 
-import { Search } from "pages";
+import { Search } from "./pages";
 
 const routes: RouteObject[] = [
   {
