@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { TbExternalLink } from "react-icons/tb";
 
@@ -16,7 +17,11 @@ const Chip: React.FC<React.PropsWithChildren<ChipProps>> = ({
     }`}
   >
     {children}
-    {Boolean(withExternalLink) && <TbExternalLink />}
+    {typeof withExternalLink === "string" && (
+      <a href={withExternalLink} target="blank" rel="noopener noreferrer">
+        <TbExternalLink />
+      </a>
+    )}
   </span>
 );
 
