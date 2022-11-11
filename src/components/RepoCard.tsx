@@ -23,7 +23,7 @@ const RepoCard: React.FC<IRepo> = ({
     <div className="flex h-24 w-full flex-col gap-1 justify-between px-3 pl-2">
       <h2 className="text-blue-50">
         <a
-          href={`/repos?owner=${login}&repoName=${name}`}
+          href={`/repo?owner=${login}&repoName=${name}`}
           className="text-lg text-blue-500 hover:underline"
         >
           {full_name}
