@@ -15,13 +15,17 @@ const RepoCard: React.FC<IRepo> = ({
   forks,
   watchers,
   updated_at,
-  owner: { avatar_url },
+  name,
+  owner: { avatar_url, login },
 }) => (
   <li className="flex w-full items-center justify-between gap-2 divide-x rounded-md bg-slate-800 py-2 px-3">
     <img src={avatar_url} alt={full_name} className="w-28 rounded-full" />
     <div className="flex h-24 w-full flex-col gap-1 justify-between px-3 pl-2">
       <h2 className="text-blue-50">
-        <a href="#" className="text-lg text-blue-500 hover:underline">
+        <a
+          href={`/repos?owner=${login}&repoName=${name}`}
+          className="text-lg text-blue-500 hover:underline"
+        >
           {full_name}
         </a>
       </h2>
