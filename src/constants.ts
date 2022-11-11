@@ -7,3 +7,4 @@ export const sortTypes: Sortable[] = [
   { name: "Help Wanted Issues", value: "help-wanted-issues" },
   { name: "Updated", value: "updated" },
 ];
+export const maxResultsPerFetch = 20;
