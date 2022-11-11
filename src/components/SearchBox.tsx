@@ -4,12 +4,17 @@ import { sortTypes } from "../constants";
 
 import type { Sort } from "../types";
 
-const SearchBox: React.FC = () => {
+export type SearchBoxProps = {
+  handleSearch: (arg1: string, arg2: Sort) => void;
+};
+
+const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch }) => {
   const [query, setQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<Sort>("stars");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    handleSearch(query, sortBy);
   };
 
   return (
