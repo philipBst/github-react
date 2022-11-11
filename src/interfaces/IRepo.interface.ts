@@ -1,4 +1,5 @@
 export interface IRepo {
+  id: number;
   name: string;
   full_name: string;
   description: string;
@@ -7,6 +8,11 @@ export interface IRepo {
   stargazers_count: number;
   updated_at: string;
   open_issues: number;
+  owner: {
+    id: number;
+    login: string;
+    avatar_url: string;
+  };
 }
 
 export interface IRepoData {
