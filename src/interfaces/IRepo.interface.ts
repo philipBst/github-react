@@ -13,6 +13,7 @@ export interface IRepo {
     login: string;
     avatar_url: string;
   };
+  default_branch: string;
 }
 
 export interface IRepoData {
