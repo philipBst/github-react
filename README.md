@@ -1,6 +1,6 @@
 # RepoFinder
 
-RepoFinder is a simple react application using the github's openapi to search through repositories.
+RepoFinder is a simple react application using the github's openapi to search through repositories. [Check preview](https://repo-finder-philipbst.netlify.app/)
 
 ## Setup
 
