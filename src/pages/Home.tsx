@@ -55,7 +55,7 @@ const Home = () => {
   }, [query, sortBy, page]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4">
+    <div className="flex min-h-screen w-full flex-col items-center gap-4 pt-8">
       <Container>
         <AppHeader />
       </Container>
