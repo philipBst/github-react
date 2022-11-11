@@ -30,8 +30,8 @@ const RepoCard: React.FC<IRepo> = ({
         </a>
       </h2>
       <p className="text-gray-300 text-sm">
-        {description.length > 100
-          ? description.slice(0, 100).concat("...")
+        {description?.length > 100
+          ? description?.slice(0, 100).concat("...")
           : description}
       </p>
       <div className="flex max-w-max gap-3 items-center justify-between">

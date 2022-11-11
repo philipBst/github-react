@@ -42,7 +42,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch }) => {
         className="w-full p-2 pl-4 text-slate-900 outline-none"
         placeholder="Search for repo..."
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => setQuery(e.target.value.trim())}
       />
       <button
         type="submit"
