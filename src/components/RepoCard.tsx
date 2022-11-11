@@ -2,7 +2,11 @@ import { CgGitFork } from "react-icons/cg";
 import { FaRegStar } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 
+import { formatRelative, subDays } from "date-fns";
+
 import { IRepo } from "../interfaces/IRepo.interface";
+
+const currentDate = new Date();
 
 const RepoCard: React.FC<IRepo> = ({
   full_name,
@@ -39,7 +43,10 @@ const RepoCard: React.FC<IRepo> = ({
           <AiFillEye />
           <span className="text-xs">{watchers}</span>
         </div>
-        <span className="text-xs text-gray-400">Updated at: {updated_at}</span>
+        <span className="text-xs text-gray-400">
+          Updated:{" "}
+          {formatRelative(subDays(new Date(updated_at), 3), currentDate)}
+        </span>
       </div>
     </div>
   </li>
