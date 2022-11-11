@@ -10,6 +10,12 @@ Use git to clone the repo
 git clone https://github.com/philipBst/github-react.git
 ```
 
+Change into project directory
+
+```bash
+cd github-react
+```
+
 Install dependencies using pnpm(preferred) or npm or yarn
 
 ```bash
@@ -23,13 +29,3 @@ pnpm dev
 ```
 
 That's it, your local development server should start on [https://localhost:5173](https://localhost:5173)
-
-## Alternatively
-
-If you have docker setup on your system, simply clone the repo as shown above and run below command
-
-```bash
-docker-compose up
-or
-docker compose up
-```
