@@ -1,6 +1,6 @@
-import { GITHUB_SEARCH_REPOS_URL } from "./endpoints";
+import { GITHUB_SEARCH_REPOS_URL, GITHUB_GET_REPO_URL } from "./endpoints";
 
-import type { IRepoData } from "../interfaces";
+import type { IRepo, IRepoData } from "../interfaces";
 import type { Sort } from "../types";
 
 export const searchReposBy = async (
@@ -12,5 +12,13 @@ export const searchReposBy = async (
   const response = await fetch(
     GITHUB_SEARCH_REPOS_URL(q, per_page, sort, page)
   );
+  return response.json();
+};
+
+export const getRepo = async (
+  owner: string,
+  repoName: string
+): Promise<IRepo> => {
+  const response = await fetch(GITHUB_GET_REPO_URL(owner, repoName));
   return response.json();
 };

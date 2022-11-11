@@ -24,38 +24,44 @@ const Home = () => {
 
   const handleSearch = useCallback(
     async (query: string, sort: Sort) => {
-      const data = await searchReposBy(query, maxResultsPerFetch, sort, page);
-      setData(data);
-      setQuery(query);
-      setSortBy(sort);
+      if (query) {
+        const data = await searchReposBy(query, maxResultsPerFetch, sort, page);
+        setData(data);
+        setQuery(query);
+        setSortBy(sort);
+      }
     },
     [page]
   );
 
   const nextPage = useCallback(async () => {
-    const data = await searchReposBy(
-      query,
-      maxResultsPerFetch,
-      sortBy,
-      page + 1
-    );
-    setData(data);
-    setPage((page) => page + 1);
+    if (query) {
+      const data = await searchReposBy(
+        query,
+        maxResultsPerFetch,
+        sortBy,
+        page + 1
+      );
+      setData(data);
+      setPage((page) => page + 1);
+    }
   }, [query, sortBy, page]);
 
   const prevPage = useCallback(async () => {
-    const data = await searchReposBy(
-      query,
-      maxResultsPerFetch,
-      sortBy,
-      page - 1
-    );
-    setData(data);
-    setPage((page) => page - 1);
+    if (query) {
+      const data = await searchReposBy(
+        query,
+        maxResultsPerFetch,
+        sortBy,
+        page - 1
+      );
+      setData(data);
+      setPage((page) => page - 1);
+    }
   }, [query, sortBy, page]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4">
+    <div className="flex min-h-screen w-full flex-col items-center gap-4 pt-8">
       <Container>
         <AppHeader />
       </Container>
@@ -89,6 +95,13 @@ const Home = () => {
               </button>
             </div>
           </div>
+        </Container>
+      )}
+      {Boolean(query) || !isEmptyArray(data.items) || (
+        <Container>
+          <p className="w-full text-[4rem] font-extrabold pt-24 text-center">
+            Your favorite Repo finder.
+          </p>
         </Container>
       )}
     </div>

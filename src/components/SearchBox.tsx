@@ -25,7 +25,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch }) => {
       <select
         name="filter-repo"
         id="filter-repo"
-        className="cursor-pointer bg-gray-700 p-2 outline-none"
+        className="cursor-pointer bg-gray-700 p-[0.55rem] outline-none"
         value={sortBy}
         onChange={(e) => setSortBy(e.target.value as Sort)}
       >
