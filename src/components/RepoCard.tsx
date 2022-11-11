@@ -21,7 +21,11 @@ const RepoCard: React.FC<IRepo> = ({
           {full_name}
         </a>
       </h2>
-      <p className="text-gray-300 text-sm">{description}</p>
+      <p className="text-gray-300 text-sm">
+        {description.length > 100
+          ? description.slice(0, 100).concat("...")
+          : description}
+      </p>
       <div className="flex max-w-max gap-3 items-center justify-between">
         <div className="flex gap-1 items-center max-w-max text-gray-400">
           <FaRegStar />
