@@ -22,7 +22,7 @@ Start the dev server
 pnpm dev
 ```
 
-Then your local development server should start on [https://localhost:5173](https://localhost:5173)
+That's it, your local development server should start on [https://localhost:5173](https://localhost:5173)
 
 ## Alternatively
 
