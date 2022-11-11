@@ -9,3 +9,6 @@ export const GITHUB_SEARCH_REPOS_URL = (
   page: number
 ) =>
   `${GITHUB_API_BASE_URL}/search/repositories?q=${q}&per_page=${per_page}&sort=${sort}&page=${page}`;
+
+export const GITHUB_GET_REPO_URL = (owner: string, repo: string) =>
+  `${GITHUB_API_BASE_URL}/repos/${owner}/${repo}`;
